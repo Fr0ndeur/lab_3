@@ -1,0 +1,11 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel src/pages/home.html",
+    "build": "parcel build src/pages/home.html"
+  },
+  "dependencies": {
+    "parcel": "^2.12.0"
+  }
+}
