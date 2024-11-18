@@ -1,0 +1,610 @@
+@use 'sass:list';
+
+$black-ish: #0d1821;
+$gray-ish: #172b3a;
+$tag-color-1: #c8957e;
+$tag-color-2: #c87ec1;
+$tag-color-3: #c87ea5;
+$tag-color-4: #817ec8;
+$tag-color-5: #7ec89a;
+$tag-color-6: #b4c87e;
+$tag-color-7: #7ebac8;
+$tag-color-8: #7e87c8;
+$tag-colors: (
+  $tag-color-1,
+  $tag-color-2,
+  $tag-color-3,
+  $tag-color-4,
+  $tag-color-5,
+  $tag-color-6,
+  $tag-color-7,
+  $tag-color-8
+);
+$blue-ish: #508dce;
+$light-light-gray-ish: #f0f3fa;
+$light-gray-ish: #adadad;
+$yellow-ish: #fffd70;
+$white-ish: #e1e7f5;
+$link-hover-color: #007bff;
+
+/* Сброс стилей и общие настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: $white-ish;
+  color: $black-ish;
+}
+
+/* Header */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem; // 160px
+  padding-left: 10rem; // 160px
+  padding-right: 10rem; // 160px
+  background-color: $white-ish;
+
+  .logo img {
+    width: 10rem; // 160px
+    height: 10rem; // 160px
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+
+    .nav-item {
+      text-decoration: none;
+      color: $black-ish;
+      font-size: 1.75rem;
+      font-weight: bold;
+      font-weight: 300;
+
+      #home-icon {
+        width: 1.75rem;
+        height: auto;
+        vertical-align: middle;
+      }
+
+      &.active {
+        font-weight: 400;
+      }
+
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* Main Banner */
+.banner {
+  background-image: url('../../images/banner.png');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white-ish;
+  text-align: center;
+
+  .photographer-name,
+  .photographer-title {
+    text-shadow: 0 -2px 16px $black-ish;
+  }
+
+  .photographer-name {
+    font-weight: 600;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  .photographer-title {
+    font-weight: 600;
+    font-size: 2.25rem;
+    margin-top: 10px;
+  }
+}
+
+/* About Section */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $black-ish;
+  color: $white-ish;
+  gap: 10rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .about-title {
+    font-weight: 400;
+    font-size: 3rem;
+    margin: 0;
+    vertical-align: text-top;
+  }
+
+  .about-paragraph {
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin: 0;
+    vertical-align: text-top;
+  }
+
+  .about-photo img {
+    height: 100%;
+    width: 26.25rem; // 420px
+  }
+  .about-photo {
+    height: 100%;
+    width: 26.25rem; // 420px
+  }
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding-left: 10em;
+  padding-right: 10em;
+  //position: relative;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .portfolio-filters {
+    display: flex;
+    justify-content: flex-end; // Вирівнюємо фільтри праворуч у секції
+    margin-bottom: 1rem;
+
+    .filter-button {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 500; // Medium
+      font-size: 0.875rem; // 14px
+      text-decoration: none;
+      color: $black-ish; // Основний колір тексту
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+
+      .filter-icon {
+        margin-right: 0.5em; // Відступ між іконкою та текстом
+        display: inline-block;
+      }
+    }
+  }
+  $repeat: 20;
+
+  .portfolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem; // Горизонтальний 4px (0.25rem), вертикальний 8px (0.5rem)
+    margin-top: 1rem; // Відступ від кнопки фільтра
+    margin-bottom: 3rem; // 48px отступ от тегов до галереи
+
+    @for $i from 1 through $repeat {
+      .tag:nth-of-type(#{length($tag-colors)}n + #{$i}) {
+        background-color: nth($tag-colors, random(length($tag-colors)));
+      }
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem; // Відступи від тексту до границь (16px зліва та справа)
+      height: 2.5rem; // 40px
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400; // Semibold
+      font-size: 0.875rem; // 14px
+      color: $white-ish; // Текст білий, щоб контрастувати з кольором тегу
+      border-radius: 2px;
+    }
+  }
+
+  .portfolio-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem; // 30px между фото вертикально и горизонтально
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    // gap: 20px;
+
+    .portfolio-item {
+      position: relative;
+      width: 12.5rem; // 200px
+      height: 12.5rem; // 200px
+      border-radius: 4px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .photo-tag {
+        position: absolute;
+        bottom: 4px;
+        left: 4px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400; // Regular
+        font-size: 0.75rem; // 12px
+        color: $white-ish;
+        max-width: 75%; // Ограничение ширины до 75% (150px)
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-shadow: 0 -2px 16px $black-ish;
+      }
+
+      .share-icon {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 1rem; // Задаем размер иконке (16px)
+        height: 1rem;
+        //opacity: 0.3; // Прозрачность 30%
+      }
+    }
+  }
+  .loading-icon {
+    width: 2.25rem; // 36px
+    height: 2.25rem; // 36px
+    margin: 2.25rem auto 0; // 36px отступ сверху (от галереи), центрирование по горизонтали
+    border: 4px solid $white-ish;
+    border-top: 4px solid $black-ish; // Верхняя часть темнее для эффекта вращения
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 10rem;
+  height: 12.5rem;
+
+  .contact-info {
+    h3 {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 600; // Semibold
+      font-size: 1.75rem; // 28px
+      margin-bottom: 1.5rem; // 24px отступ до контактной информации
+    }
+
+    p {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 400; // Regular
+      font-size: 0.875rem; // 14px
+      margin-bottom: 1.5rem; // 24px между телефон/почта
+      &:last-of-type {
+        margin-bottom: 1.5rem; // 24px отступ до социальных иконок
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem; // 16px между иконками
+
+      .social-icon {
+        width: 2.25rem; // 36px
+        height: 2.25rem; // 36px
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .site-icon {
+    img {
+      width: 10rem; // 160px
+      height: 10rem; // 160px
+    }
+  }
+}
+
+// Модальное затемнение
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 24, 33, 0.8); // Black-ish с 80% прозрачностью
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; // Высокий приоритет поверх других элементов
+}
+
+// Модальное окно
+.modal-window {
+  background-color: $white-ish;
+  border-radius: 0.75rem; // 12px
+  width: 27.5rem; // 440px
+  height: 45rem; // 720px
+  position: relative; // Для позиционирования кнопки закрытия
+  padding-left: 2.5rem; // 32px отступ для содержимого
+  padding-top: 2.5rem; // 32px отступ для содержимого
+  padding-bottom: 2.5rem; // 32px отступ для содержимого
+
+  // Заголовок модального окна
+  .modal-title {
+    text-align: center;
+    margin-top: 2rem; // 32px от верхнего края окна
+    padding-right: 2.5rem; // 32px отступ для содержимого
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600; // Medium
+    font-size: 1rem;
+  }
+
+  // Кнопка закрытия
+  .close-button {
+    position: absolute;
+    top: 0.5rem; // 8px от верхнего края
+    right: 0.5rem; // 8px от правого края
+    background: none;
+    border: none;
+    font-size: 1.5rem; // Размер крестика
+    cursor: pointer;
+    color: $black-ish;
+
+    &:hover {
+      color: darken($black-ish, 10%);
+    }
+  }
+
+  .categories {
+    padding-right: 2.5rem; // 32px отступ для содержимого
+
+    .categories-title {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 500; // Medium
+      font-size: 0.875rem; // 14px
+      margin-bottom: 1rem; // 16px отступ от заголовка до чекбоксов
+    }
+
+    .categories-options {
+      display: flex;
+      flex-wrap: wrap; // Перенос элементов на следующую строку
+      gap: 0.625rem 2rem; // 10px вертикально, 32px горизонтально
+
+      .category-option {
+        display: flex;
+        align-items: center;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 500; // Medium
+        font-size: 1rem; // 16px
+        gap: 0.5rem; // Отступ между текстом и чекбоксом
+
+        input[type='checkbox'] {
+          width: 0.875rem; // 14px
+          height: 0.875rem; // 14px
+          border: 1px solid $black-ish;
+          border-radius: 2px;
+          appearance: none; // Убираем стандартный стиль браузера
+          cursor: pointer;
+
+          &:checked {
+            background-color: $blue-ish; // Фон синий при выборе
+            border: 1px solid $white-ish; // Белая рамка
+            box-shadow: 0 0 7.3px 0 $blue-ish; // Тень, как указано в настройках Figma
+          }
+
+          &:checked::after {
+            content: url('../../images/material-symbols_check.svg'); // Галочка
+            font-size: 0.5rem; // Размер галочки
+            color: $white-ish; // Белый цвет галочки
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+
+  .tag-input-container {
+    padding-right: 2.5rem; // 32px отступ для содержимого
+    margin-top: 1.5rem; // 24px отступ от категорий
+
+    .input-wrapper {
+      position: relative; // Для позиционирования иконки относительно контейнера
+      width: 100%;
+
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 1rem; // 16px от левого края
+        transform: translateY(-50%);
+        width: 1rem; // 16px
+        height: 1rem; // 16px
+        background: url('../../images/material-symbols_search.svg') no-repeat
+          center;
+        background-size: contain; // Масштабируем иконку
+        pointer-events: none; // Чтобы иконка не мешала взаимодействию
+      }
+
+      .tag-input {
+        width: 100%; // На всю ширину
+        height: 2.25rem; // 36px
+        padding-left: 3rem; // Отступ для иконки
+        border-radius: 0.25rem; // 4px
+        background-color: $light-light-gray-ish;
+        border: none;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500; // Medium
+        font-size: 0.875rem; // 14px
+        color: $light-gray-ish;
+
+        &::placeholder {
+          color: $light-gray-ish;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 500; // Medium
+          font-size: 0.875rem; // 14px
+        }
+
+        &:focus {
+          outline: none; // Убираем стандартный outline
+          border: 1px solid $gray-ish; // Цвет рамки при фокусе
+        }
+      }
+    }
+  }
+}
+
+.tags-container {
+  margin-top: 1rem; // 16px отступ от поля ввода тегов
+  padding-right: 0.5rem;
+
+  .tags-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500; // Medium
+    font-size: 0.875rem; // 14px
+    margin-bottom: 1rem; // Отступ от заголовка
+  }
+
+  .active-tags,
+  .inactive-tags {
+    padding-right: 2.5rem; // 32px отступ для содержимого
+    max-height: 200px; // Укажите высоту контейнера
+    overflow-y: auto; // Скролл, если тегов слишком много
+
+    &::-webkit-scrollbar {
+      width: 0.25rem; // 4px
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $light-gray-ish;
+      border-radius: 0.25rem; // 4px
+    }
+
+    .tag {
+      display: flex;
+      align-items: center;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 300; // Light
+      font-size: 1.25rem; // 20px
+      margin-bottom: 1.5rem; // 24px
+      position: relative;
+
+      .circle {
+        width: 0.5rem; // 8px
+        height: 0.5rem; // 8px
+        background-color: $blue-ish;
+        border-radius: 50%;
+        margin-left: 0.5rem; // 8px отступ слева от текста
+        box-shadow: 0 0 5.4px 0 $blue-ish;
+        animation: pulse 2s infinite; // Анимация для пульсации
+      }
+
+      .count {
+        margin-left: auto; // Отодвигаем количество фото вправо
+        width: 1.5rem; // 24px
+        height: 1.5rem; // 24px
+        background-color: $light-gray-ish;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 500; // Medium
+        font-size: 0.875rem; // 14px
+        color: $white-ish;
+      }
+    }
+  }
+
+  .active-tags {
+    margin-bottom: 2.25rem; // 36px отступ между активными и неактивными тегами
+  }
+}
+
+// Анимация пульсации
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5.4px 0 $blue-ish;
+  }
+  50% {
+    box-shadow: 0 0 8px 0px $blue-ish;
+  }
+  100% {
+    box-shadow: 0 0 5.4px 0 $blue-ish;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+
+    .about-photo img {
+      width: 200px;
+      margin-top: 20px;
+    }
+  }
+
+  .portfolio-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .photographer-name {
+    font-size: 2rem;
+  }
+
+  .photographer-title {
+    font-size: 1.2rem;
+  }
+
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
+}
