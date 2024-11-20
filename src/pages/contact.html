@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Контакти - Фотограф Олексій Терещенко</title>
+    <link rel="stylesheet" href="../styles/build/common.css" />
+    <link rel="stylesheet" href="../styles/build/contact.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;900&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header id="header">
@@ -12,82 +18,109 @@
       </div>
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="./home.html" class="nav-item">Головна</a></li>
+          <li>
+            <a href="./home.html" class="nav-item active">
+              <img
+                id="home-icon"
+                src="../images/material-symbols_home.png"
+                alt="Home Icon"
+              />Головна</a
+            >
+          </li>
           <li><a href="./price.html" class="nav-item">Послуги</a></li>
-          <li><a href="./contact.html" class="nav-item active">Контакти</a></li>
+          <li><a href="./contact.html" class="nav-item">Контакти</a></li>
         </ul>
       </nav>
     </header>
 
-    <section id="about" class="about">
-      <div class="about-photo">
-        <img src="../images/about-photo.jpg" alt="Фото фотографа" />
-      </div>
-      <div class="about-content">
-        <h2>Про нас</h2>
-        <p>
-          Вітаю! Мене звати Олексій, і я — фотограф із досвідом роботи в різних
-          жанрах.
-        </p>
-        <p>
-          Я спеціалізуюсь на портретній та репортажній зйомці, прагнучи передати
-          не просто зображення, а емоції й характер.
-        </p>
-        <p>
-          Моя робота полягає в тому, щоб кожен кадр був наповнений змістом,
-          відображав індивідуальність та залишався актуальним довгий час.
-          Завдяки сучасним підходам і професіоналізму, я створюю фотографії, які
-          розповідають історію й викликають захоплення.
-        </p>
-        <p>
-          Якщо вам потрібні якісні, продумані кадри, які говоритимуть самі за
-          себе — звертайтеся, і я допоможу вам зафіксувати моменти, які варто
-          зберегти на довгі роки.
-        </p>
-        <p>
-          <strong>Телефон:</strong> (+380) 99-000-00-00<br /><strong
-            >Email:</strong
-          >
-          o.tereshchenko@photography.ua
-        </p>
+    <section class="about-us">
+      <div class="about-container">
+        <div class="about-photo">
+          <img src="../images/about-photo2.png" alt="Фото фотографа" />
+        </div>
+        <div class="about-text">
+          <h1 class="about-title">Про нас</h1>
+          <p>
+            Вітаю! Мене звати Олексій, і я — фотограф із досвідом роботи в
+            різних жанрах.
+          </p>
+          <p>
+            Я спеціалізуюсь на портретній та репортажній зйомці, прагнучи
+            передати не просто зображення, а емоції й характер.
+          </p>
+          <p>
+            Моя робота полягає в тому, щоб кожен кадр був наповнений змістом,
+            відображав індивідуальність та залишався актуальним довгий час.
+            Завдяки сучасним підходам і професіоналізму, я створюю фотографії,
+            які розповідають історію й викликають захоплення.
+          </p>
+          <p>
+            Якщо вам потрібні якісні, продумані кадри, які говоритимуть самі за
+            себе — звертайтеся, і я допоможу вам зафіксувати моменти, які варто
+            зберегти на довгі роки.
+          </p>
+          <p class="contact-info">
+            <span class="contact-label">Телефон:</span> (+380) 99-000-00-00
+            <br />
+            <span class="contact-label">Email:</span>
+            o.tereshchenko@photography.ua
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="contact-form" class="contact-form">
-      <h2>Контактна форма</h2>
-      <form action="#" method="POST">
-        <label for="first-name">Ім'я <span>*</span></label>
-        <input type="text" id="first-name" name="first-name" required />
-
-        <label for="last-name">Прізвище</label>
-        <input type="text" id="last-name" name="last-name" />
-
-        <label for="email">Email <span>*</span></label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Повідомлення <span>*</span></label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Введіть текст повідомлення..."
-          required
-        ></textarea>
-
+    <section class="contact-form-section">
+      <h2 class="contact-form-title">Контактна форма</h2>
+      <form class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name"><span class="red-highlight">*</span> Ім'я</label>
+            <input type="text" id="name" placeholder="-" />
+          </div>
+          <div class="form-group">
+            <label for="surname">Прізвище</label>
+            <input type="text" id="surname" placeholder="-" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email"><span class="red-highlight">*</span> Email</label>
+          <input type="email" id="email" placeholder="-" />
+        </div>
+        <div class="form-group">
+          <label for="message"
+            ><span class="red-highlight">*</span> Повідомлення</label
+          >
+          <textarea
+            id="message"
+            placeholder="Введіть текст повідомлення..."
+          ></textarea>
+        </div>
         <button type="submit" class="submit-button">Надіслати</button>
       </form>
     </section>
 
     <footer id="footer" class="footer">
       <div class="contact-info">
-        <p>Контактна інформація</p>
-        <p>Телефон: (+380) 99-000-00-00</p>
-        <p>Email: o.tereshchenko@photography.ua</p>
+        <h3>Контактна інформація</h3>
+        <p>(+380) 99-000-00-00</p>
+        <p>o.tereshchenko@photography.ua</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"
+            ><img src="../images/prime_twitter.png" alt="Icon 1"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="../images/prime_telegram.png" alt="Icon 2"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="../images/prime_instagram.png" alt="Icon 3"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="../images/prime_linkedin.png" alt="Icon 4"
+          /></a>
+        </div>
       </div>
-      <div class="social-links">
-        <a href="#" class="social-link">Telegram</a>
-        <a href="#" class="social-link">Instagram</a>
-        <a href="#" class="social-link">Facebook</a>
-        <a href="#" class="social-link">LinkedIn</a>
+      <div class="site-icon">
+        <img src="../images/logo.png" alt="Site Logo" />
       </div>
     </footer>
   </body>

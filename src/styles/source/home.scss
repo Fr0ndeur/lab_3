@@ -1,92 +1,6 @@
 @use 'sass:list';
 
-$black-ish: #0d1821;
-$gray-ish: #172b3a;
-$tag-color-1: #c8957e;
-$tag-color-2: #c87ec1;
-$tag-color-3: #c87ea5;
-$tag-color-4: #817ec8;
-$tag-color-5: #7ec89a;
-$tag-color-6: #b4c87e;
-$tag-color-7: #7ebac8;
-$tag-color-8: #7e87c8;
-$tag-colors: (
-  $tag-color-1,
-  $tag-color-2,
-  $tag-color-3,
-  $tag-color-4,
-  $tag-color-5,
-  $tag-color-6,
-  $tag-color-7,
-  $tag-color-8
-);
-$blue-ish: #508dce;
-$light-light-gray-ish: #f0f3fa;
-$light-gray-ish: #adadad;
-$yellow-ish: #fffd70;
-$white-ish: #e1e7f5;
-$link-hover-color: #007bff;
-
-/* Сброс стилей и общие настройки */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto Condensed', sans-serif;
-  background-color: $white-ish;
-  color: $black-ish;
-}
-
-/* Header */
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 10rem; // 160px
-  padding-left: 10rem; // 160px
-  padding-right: 10rem; // 160px
-  background-color: $white-ish;
-
-  .logo img {
-    width: 10rem; // 160px
-    height: 10rem; // 160px
-  }
-
-  .nav-list {
-    list-style: none;
-    display: flex;
-    gap: 4rem;
-
-    .nav-item {
-      text-decoration: none;
-      color: $black-ish;
-      font-size: 1.75rem;
-      font-weight: bold;
-      font-weight: 300;
-
-      #home-icon {
-        width: 1.75rem;
-        height: auto;
-        vertical-align: middle;
-      }
-
-      &.active {
-        font-weight: 400;
-      }
-
-      &:hover {
-        color: $link-hover-color;
-      }
-    }
-  }
-}
-
-section {
-  margin-bottom: 2.5rem;
-}
+@import 'colors';
 
 /* Main Banner */
 .banner {
@@ -125,11 +39,13 @@ section {
   justify-content: space-around;
   background-color: $black-ish;
   color: $white-ish;
-  gap: 10rem;
+  gap: 5rem;
   padding-left: 10rem;
   padding-right: 10rem;
 
   .about-content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
@@ -149,13 +65,13 @@ section {
     vertical-align: text-top;
   }
 
-  .about-photo img {
-    height: 100%;
-    width: 26.25rem; // 420px
-  }
   .about-photo {
     height: 100%;
     width: 26.25rem; // 420px
+  }
+
+  .about-photo > img {
+    height: 100%;
   }
 }
 
@@ -294,56 +210,6 @@ section {
   }
 }
 
-/* Footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2.5rem 10rem;
-  height: 12.5rem;
-
-  .contact-info {
-    h3 {
-      font-family: 'Roboto Condensed', sans-serif;
-      font-weight: 600; // Semibold
-      font-size: 1.75rem; // 28px
-      margin-bottom: 1.5rem; // 24px отступ до контактной информации
-    }
-
-    p {
-      font-family: 'Roboto Condensed', sans-serif;
-      font-weight: 400; // Regular
-      font-size: 0.875rem; // 14px
-      margin-bottom: 1.5rem; // 24px между телефон/почта
-      &:last-of-type {
-        margin-bottom: 1.5rem; // 24px отступ до социальных иконок
-      }
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 1rem; // 16px между иконками
-
-      .social-icon {
-        width: 2.25rem; // 36px
-        height: 2.25rem; // 36px
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-  }
-
-  .site-icon {
-    img {
-      width: 10rem; // 160px
-      height: 10rem; // 160px
-    }
-  }
-}
-
 // Модальное затемнение
 .modal-overlay {
   position: fixed;
@@ -356,10 +222,12 @@ section {
   justify-content: center;
   align-items: center;
   z-index: 1000; // Высокий приоритет поверх других элементов
+  display: none;
 }
 
 // Модальное окно
 .modal-window {
+  display: none;
   background-color: $white-ish;
   border-radius: 0.75rem; // 12px
   width: 27.5rem; // 440px

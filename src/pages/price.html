@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/build/common.css" />
+    <link rel="stylesheet" href="../styles/build/price.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;900&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Послуги</title>
   </head>
   <body>
@@ -12,138 +18,188 @@
       </div>
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="./home.html" class="nav-item">Головна</a></li>
+          <li>
+            <a href="./home.html" class="nav-item active">
+              <img
+                id="home-icon"
+                src="../images/material-symbols_home.png"
+                alt="Home Icon"
+              />Головна</a
+            >
+          </li>
           <li><a href="./price.html" class="nav-item">Послуги</a></li>
           <li><a href="./contact.html" class="nav-item">Контакти</a></li>
         </ul>
       </nav>
     </header>
 
-    <main id="services" class="services">
-      <h1>Послуги</h1>
-      <div class="service-cards">
-        <div class="service-card">
-          <h2>Весільна фотосесія</h2>
-          <p>
-            Весільна фотосесія — це не просто фотографії, а ціла історія вашого
-            дня. Я знімаю всі ключові моменти: підготовку наречених, церемонію,
-            урочистість, святкування та веселі моменти на танцполі. Усі
-            фотографії обробляються з ретельною увагою до деталей.
-          </p>
-          <p>Ціна: від 5 000 грн.</p>
-          <button class="book-button">Записатися</button>
-          <ul>
-            <li>Тривалість зйомки: від 4 до 10 годин.</li>
-            <li>Кількість фото: до 500 ретельно оброблених знімків.</li>
-            <li>Локації: місто, природа, студія.</li>
-            <li>Додатково: фотокнига, відеозйомка.</li>
-          </ul>
+    <section id="services">
+      <h1 class="services-title">Послуги</h1>
+      <div class="services-container">
+        <div
+          class="service-card"
+          style="background-image: url('../images/wedding-photo.jpg')"
+        >
+          <div class="service-content">
+            <h2>Весільна фотосесія</h2>
+            <p>
+              Весільна фотосесія — це не просто фотографії, а ціла історія
+              вашого дня. Я знімаю всі ключові моменти: підготовку наречених,
+              церемонію, урочистість, святкування та веселі моменти на танцполі.
+              Усі фотографії обробляються з ретельною увагою до деталей.
+            </p>
+            <p class="price">Ціна: від 5 000 грн.</p>
+            <button class="book-button">Записатися</button>
+            <p>
+              Тривалість зйомки: від 4 до 10 годин. <br /><br />
+              Кількість фото: до 500 ретельно оброблених знімків.
+            </p>
+          </div>
         </div>
-
-        <div class="service-card">
-          <h2>Портретна фотосесія</h2>
-          <p>
-            Створюю портрети, які підкреслюють індивідуальність кожної людини.
-            Це може бути як класичний портрет в студії, так і творчий фотосет на
-            вулиці. Разом ми знайдемо ідеальну локацію, щоб передати ваш
-            характер і емоції через фотографії.
-          </p>
-          <p>Ціна: від 1 500 грн.</p>
-          <button class="book-button">Записатися</button>
-          <ul>
-            <li>Тривалість зйомки: від 1 до 2 годин.</li>
-            <li>Кількість фото: до 30 ретельно оброблених портретів.</li>
-            <li>Локації: студія, природа, міські локації.</li>
-            <li>Додатково: макіяж та стилізація.</li>
-          </ul>
+        <div
+          class="service-card"
+          style="background-image: url('../images/portrait-photo.jpg')"
+        >
+          <div class="service-content">
+            <h2>Портретна фотосесія</h2>
+            <p>
+              Створюю портрети, які підкреслюють індивідуальність кожної людини.
+              Це може бути як класичний портрет в студії, так і творчий фотосет
+              на вулиці. Разом ми знайдемо ідеальну локацію, щоб передати ваш
+              характер і емоції через фотографії.
+            </p>
+            <p class="price">Ціна: від 1 500 грн.</p>
+            <button class="book-button">Записатися</button>
+            <p>
+              Тривалість зйомки: від 1 до 2 годин. <br /><br />
+              Кількість фото: до 30 ретельно оброблених портретів. <br /><br />
+              Локації: студія, природа, міські локації. <br /><br />
+              Додатково: макіяж та стилізація.
+            </p>
+          </div>
         </div>
-
-        <div class="service-card">
-          <h2>Корпоративна зйомка</h2>
-          <p>
-            Моя корпоративна фотозйомка допоможе вашій компанії створити
-            професійні знімки для презентацій, веб-сайтів, маркетингових
-            матеріалів та соціальних мереж. Я пропоную як індивідуальні портрети
-            співробітників, так і репортажі з корпоративних заходів.
-          </p>
-          <p>Ціна: від 3 000 грн.</p>
-          <button class="book-button">Записатися</button>
-          <ul>
-            <li>Тривалість зйомки: від 2 до 6 годин.</li>
-            <li>Кількість фото: до 200 оброблених знімків.</li>
-            <li>Локації: офіс, конференц-зали, заходи.</li>
-            <li>Додатково: корпоративне відео.</li>
-          </ul>
+        <div
+          class="service-card"
+          style="background-image: url('../images/corporate-photo.jfif')"
+        >
+          <div class="service-content">
+            <h2>Корпоративна зйомка</h2>
+            <p>
+              Моя корпоративна фотозйомка допоможе вашій компанії створити
+              професійні знімки для презентацій, веб-сайтів, маркетингових
+              матеріалів та соціальних мереж. Я пропоную як індивідуальні
+              портрети співробітників, так і репортажі з корпоративних заходів.
+            </p>
+            <p class="price">Ціна: від 3 000 грн.</p>
+            <button class="book-button">Записатися</button>
+            <p>
+              Тривалість зйомки: від 2 до 6 годин. <br /><br />
+              Кількість фото: до 200 оброблених знімків. <br /><br />
+              Локації: офіс, конференц-зали, заходи. <br /><br />
+              Додатково: корпоративні відео.
+            </p>
+          </div>
         </div>
-
-        <div class="service-card">
-          <h2>Персоналізована фотосесія</h2>
-          <p>
-            Я пропоную індивідуальний підхід до кожного клієнта: разом ми
-            обираємо місце, стиль, настрій та концепцію зйомки, щоб результат
-            повністю відповідав вашим очікуванням.
-          </p>
-          <p>Ціна: договірна.</p>
-          <button class="book-button">Записатися</button>
-          <ul>
-            <li>
+        <div
+          class="service-card"
+          style="background-image: url('../images/personalized-photo.webp')"
+        >
+          <div class="service-content">
+            <h2>Персоналізована фотосесія</h2>
+            <p>
+              Я пропоную індивідуальний підхід до кожного клієнта: разом ми
+              обираємо місце, стиль, настрій та концепцію зйомки, щоб результат
+              повністю відповідав вашим очікуванням.
+            </p>
+            <p class="price">Ціна: договірна.</p>
+            <button class="book-button">Записатися</button>
+            <p>
               Тривалість зйомки: від 1 до 4 годин (залежно від ваших побажань).
-            </li>
-            <li>Кількість фото: до 30 ретельно оброблених портретів.</li>
-            <li>Локації: будь-яке місце на ваш вибір.</li>
-            <li>Додатково: стилістика, макіяж, ретуш, друк фотографій.</li>
-          </ul>
+              <br />
+              Кількість фото: до 30 ретельно оброблених портретів. <br /><br />
+              Локації: будь-яке місце на ваш вибір. <br /><br />
+              Додатково: стилістика, макіяж, ретуш, друк фотографій.
+            </p>
+          </div>
         </div>
       </div>
-    </main>
+    </section>
 
-    <section id="faq" class="faq">
-      <h2>Часто задавані питання (FAQ)</h2>
-      <div class="faq-item">
-        <button class="faq-question">
-          Скільки часу триває обробка фотографій?
-        </button>
-        <div class="faq-answer">
-          <p>
-            В середньому обробка займає від 7 до 14 днів залежно від обсягу
-            роботи.
-          </p>
+    <section id="faq">
+      <h2 class="faq-title">Часто задавані питання (FAQ)</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Скільки часу триває обробка фотографій?</span>
+            <button class="toggle-button">
+              <img src="../images/arrow-down.svg" alt="Toggle FAQ" />
+            </button>
+          </div>
+          <div class="faq-answer">
+            <p>
+              • В середньому обробка займає від 7 до 14 днів залежно від обсягу
+              роботи.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          Чи можна замовити додаткові послуги, такі як друк фотографій?
-        </button>
-        <div class="faq-answer">
-          <p>
-            Так, я пропоную послуги друку фотографій, створення фотокниг і
-            великих альбомів.
-          </p>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span
+              >Чи можна замовити додаткові послуги, такі як друк
+              фотографій?</span
+            >
+            <button class="toggle-button">
+              <img src="../images/arrow-down.svg" alt="Toggle FAQ" />
+            </button>
+          </div>
+          <div class="faq-answer">
+            <p>
+              • Так, я пропоную послуги друку фотографій, створення фотокниг і
+              великих альбомів.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Чи можу я обрати місце для зйомки?</button>
-        <div class="faq-answer">
-          <p>
-            Звичайно! Можна вибрати будь-яке місце, яке вам подобається, або я
-            можу запропонувати кілька локацій, які підходять для фотосесії.
-          </p>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Чи можу я обрати місце для зйомки?</span>
+            <button class="toggle-button">
+              <img src="../images/arrow-down.svg" alt="Toggle FAQ" />
+            </button>
+          </div>
+          <div class="faq-answer">
+            <p>
+              • Звичайно! Можна вибрати будь-яке місце, яке вам подобається, або
+              я можу запропонувати кілька локацій, які підходять для фотосесії.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <footer id="footer" class="footer">
       <div class="contact-info">
-        <p>Контактна інформація</p>
-        <p>Телефон: (+380) 99-000-00-00</p>
-        <p>Email: o.tereshchenko@photography.ua</p>
+        <h3>Контактна інформація</h3>
+        <p>(+380) 99-000-00-00</p>
+        <p>o.tereshchenko@photography.ua</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"
+            ><img src="../images/prime_twitter.png" alt="Icon 1"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="../images/prime_telegram.png" alt="Icon 2"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="../images/prime_instagram.png" alt="Icon 3"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="../images/prime_linkedin.png" alt="Icon 4"
+          /></a>
+        </div>
       </div>
-      <div class="social-links">
-        <a href="#" class="social-link">Telegram</a>
-        <a href="#" class="social-link">Instagram</a>
-        <a href="#" class="social-link">Facebook</a>
-        <a href="#" class="social-link">LinkedIn</a>
+      <div class="site-icon">
+        <img src="../images/logo.png" alt="Site Logo" />
       </div>
     </footer>
+    <script src="../js/faq.js"></script>
   </body>
 </html>
