@@ -175,37 +175,67 @@
   }
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .about {
+@media (max-width: 1024px) {
+  .about-us {
+    padding: 0 2rem; // 160px слева и справа
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    margin-top: 3.75rem;
+    gap: 3.75rem; // 60px между секциями
 
-    .about-photo img {
-      width: 200px;
-      margin-top: 20px;
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3.75rem; // 60px между фото и текстом
+
+      .about-photo {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        aspect-ratio: 1; // Оставляем квадратное изображение
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .about-text {
+        .about-title {
+          font-size: 2.25rem; // 60px
+        }
+
+        p {
+          font-size: 1rem; // 20px
+          line-height: 1.5; // Увеличение межстрочного интервала
+          margin: 0;
+          &.contact-info {
+            .contact-label {
+              font-weight: 500; // Medium
+            }
+          }
+        }
+      }
     }
   }
+  .contact-form-section {
+    padding: 0 2rem; // Отступы слева и справа 160px
 
-  .portfolio-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .contact-form-title {
+      font-size: 1.75rem; // 28px
+    }
 
-  #header {
-    flex-direction: column;
-  }
-}
+    .contact-form {
+      .form-row {
+        display: flex;
+        flex-direction: column;
+      }
 
-@media (max-width: 480px) {
-  .photographer-name {
-    font-size: 2rem;
-  }
-
-  .photographer-title {
-    font-size: 1.2rem;
-  }
-
-  .portfolio-gallery {
-    grid-template-columns: 1fr;
+      .submit-button {
+        width: 100%;
+      }
+    }
   }
 }

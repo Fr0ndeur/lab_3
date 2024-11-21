@@ -90,7 +90,7 @@
     font-weight: 400;
   }
 
-  .portfolio-filters {
+  .portfolio-filters.desktop-only {
     display: flex;
     justify-content: flex-end; // Вирівнюємо фільтри праворуч у секції
     margin-bottom: 1rem;
@@ -116,34 +116,50 @@
     }
   }
   $repeat: 20;
-
-  .portfolio-tags {
+  .portfolio-controls {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem 0.5rem; // Горизонтальний 4px (0.25rem), вертикальний 8px (0.5rem)
+    align-items: center;
+    justify-content: space-between; // Размещаем элементы на одной линии
+    margin-bottom: 1rem;
     margin-top: 1rem; // Відступ від кнопки фільтра
     margin-bottom: 3rem; // 48px отступ от тегов до галереи
 
-    @for $i from 1 through $repeat {
-      .tag:nth-of-type(#{length($tag-colors)}n + #{$i}) {
-        background-color: nth($tag-colors, random(length($tag-colors)));
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 0.5rem; // Горизонтальний 4px (0.25rem), вертикальний 8px (0.5rem)
+
+      @for $i from 1 through $repeat {
+        .tag:nth-of-type(#{length($tag-colors)}n + #{$i}) {
+          background-color: nth($tag-colors, random(length($tag-colors)));
+        }
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem; // Відступи від тексту до границь (16px зліва та справа)
+        height: 2.5rem; // 40px
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400; // Semibold
+        font-size: 0.875rem; // 14px
+        color: $white-ish; // Текст білий, щоб контрастувати з кольором тегу
+        border-radius: 2px;
       }
     }
+    .filter-button-mobile {
+      display: none; // Скрываем для десктопной версии
+      background: none;
+      border: none;
+      cursor: pointer;
 
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 1rem; // Відступи від тексту до границь (16px зліва та справа)
-      height: 2.5rem; // 40px
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400; // Semibold
-      font-size: 0.875rem; // 14px
-      color: $white-ish; // Текст білий, щоб контрастувати з кольором тегу
-      border-radius: 2px;
+      .filter-icon {
+        font-size: 1.5rem;
+        color: $black-ish;
+      }
     }
   }
-
   .portfolio-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -227,20 +243,20 @@
 
 // Модальное окно
 .modal-window {
-  display: none;
   background-color: $white-ish;
   border-radius: 0.75rem; // 12px
   width: 27.5rem; // 440px
   height: 45rem; // 720px
   position: relative; // Для позиционирования кнопки закрытия
   padding-left: 2.5rem; // 32px отступ для содержимого
-  padding-top: 2.5rem; // 32px отступ для содержимого
+  //padding-top: 2.5rem; // 32px отступ для содержимого
   padding-bottom: 2.5rem; // 32px отступ для содержимого
 
   // Заголовок модального окна
   .modal-title {
     text-align: center;
-    margin-top: 2rem; // 32px от верхнего края окна
+    margin-top: 1rem; // 32px от верхнего края окна
+    margin-bottom: 2rem;
     padding-right: 2.5rem; // 32px отступ для содержимого
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600; // Medium
@@ -443,36 +459,151 @@
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about {
     flex-direction: column;
-    text-align: center;
+    padding: 3.75rem 2rem; // Устанавливаем нужные отступы
+    gap: 2.5rem;
 
-    .about-photo img {
-      width: 200px;
-      margin-top: 20px;
+    .about-content {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    .about-title {
+      font-size: 1.75rem; // 28px
+    }
+
+    .about-paragraph {
+      font-size: 1rem; // 16px
+    }
+
+    .about-photo {
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      aspect-ratio: 1; // Оставляем квадратное изображение
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
+  .portfolio {
+    padding: 0 0;
 
-  .portfolio-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    h2 {
+      text-align: center;
+      font-size: 2.25rem; // 36px
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+    .portfolio-filters.desktop-only {
+      display: none; // Скрываем для мобильной версии
+    }
+    .portfolio-controls {
+      padding: 0 1rem; // Уменьшенные отступы
+      display: flex;
+      justify-content: space-between; // Контролы в одну линию
+      align-items: center;
+      position: relative; // Для привязки градиента
 
-  #header {
-    flex-direction: column;
+      .portfolio-tags {
+        display: flex;
+        flex-wrap: nowrap; // Отключаем перенос тегов
+        overflow-x: scroll; // Включаем скролл
+        padding: 0.5rem 0;
+        margin-right: 1rem;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+          height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $light-gray-ish;
+          border-radius: 4px;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: 3rem; // Привязка к краю панели
+          top: 0;
+          height: 100%;
+          width: 60px; // Ширина градиента
+          background: linear-gradient(to left, $white-ish, transparent);
+          pointer-events: none; // Игнорируем клики
+        }
+        .tag {
+          white-space: nowrap;
+        }
+      }
+
+      .filter-button-mobile {
+        display: block; // Показываем только в мобильной версии
+      }
+    }
+    .portfolio-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; // Центрируем галерею
+      gap: 0; // Убираем отступы
+
+      .portfolio-item {
+        position: relative;
+        width: 50%; // 33% ширины экрана
+        height: auto;
+        aspect-ratio: 1; // Соотношение сторон 1:1
+        overflow: hidden; // Для обрезки содержимого
+        border-radius: 0; // Убираем скругления
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        p {
+        }
+      }
+    }
   }
 }
 
-@media (max-width: 480px) {
-  .photographer-name {
-    font-size: 2rem;
+@media (max-width: 440px) {
+  .modal-window {
+    padding-left: 1rem; // 32px отступ для содержимого
+    background-color: $white-ish;
+    border-radius: 0.75rem; // 12px
+    width: 100%;
+    height: 100%;
+    .modal-title {
+      text-align: center;
+      margin-top: 2rem; // 32px от верхнего края окна
+      margin-bottom: 2rem;
+      padding-right: 0rem; // 32px отступ для содержимого
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 600; // Medium
+      font-size: 1.25rem; // 14px
+    }
+    // Кнопка закрытия
+    .close-button {
+      position: absolute;
+      top: 2rem; // 8px от верхнего края
+      right: 1rem; // 8px от правого края
+    }
   }
 
-  .photographer-title {
-    font-size: 1.2rem;
-  }
-
-  .portfolio-gallery {
-    grid-template-columns: 1fr;
+  .tags-container {
+    .active-tags,
+    .inactive-tags {
+      padding-right: 1rem;
+    }
   }
 }
