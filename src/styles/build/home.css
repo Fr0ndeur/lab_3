@@ -113,64 +113,124 @@
   gap: 0.25rem 0.5rem;
 }
 .portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 1) {
-  background-color: #c87ec1;
+  background-color: #817ec8;
 }
 .portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 2) {
-  background-color: #c87ec1;
+  background-color: #b4c87e;
 }
 .portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 3) {
-  background-color: #7e87c8;
-}
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 4) {
-  background-color: #817ec8;
-}
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 5) {
-  background-color: #b4c87e;
-}
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 6) {
   background-color: #7ec89a;
 }
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 7) {
-  background-color: #7e87c8;
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 4) {
+  background-color: #7ec89a;
 }
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 8) {
-  background-color: #c8957e;
-}
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 9) {
-  background-color: #817ec8;
-}
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 10) {
-  background-color: #c87ec1;
-}
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 11) {
-  background-color: #7e87c8;
-}
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 12) {
-  background-color: #b4c87e;
-}
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 13) {
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 5) {
   background-color: #c87ea5;
 }
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 14) {
-  background-color: #c8957e;
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 6) {
+  background-color: #c87ea5;
 }
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 15) {
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 7) {
+  background-color: #c87ea5;
+}
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 8) {
+  background-color: #b4c87e;
+}
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 9) {
   background-color: #c87ec1;
 }
-.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 16) {
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 10) {
+  background-color: #7ec89a;
+}
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 11) {
   background-color: #817ec8;
 }
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 12) {
+  background-color: #c87ea5;
+}
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 13) {
+  background-color: #7e87c8;
+}
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 14) {
+  background-color: #c87ea5;
+}
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 15) {
+  background-color: #7ebac8;
+}
+.portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 16) {
+  background-color: #7ebac8;
+}
 .portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 17) {
-  background-color: #c8957e;
+  background-color: #c87ea5;
 }
 .portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 18) {
   background-color: #817ec8;
 }
 .portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 19) {
-  background-color: #7ebac8;
+  background-color: #817ec8;
 }
 .portfolio .portfolio-controls .portfolio-tags .tag:nth-of-type(8n + 20) {
+  background-color: #b4c87e;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 1) {
+  background-color: #b4c87e;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 2) {
+  background-color: #7ebac8;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 3) {
+  background-color: #7e87c8;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 4) {
   background-color: #7ec89a;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 5) {
+  background-color: #7ec89a;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 6) {
+  background-color: #7ec89a;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 7) {
+  background-color: #c8957e;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 8) {
+  background-color: #7ebac8;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 9) {
+  background-color: #7e87c8;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 10) {
+  background-color: #7ebac8;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 11) {
+  background-color: #7ec89a;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 12) {
+  background-color: #c8957e;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 13) {
+  background-color: #817ec8;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 14) {
+  background-color: #c8957e;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 15) {
+  background-color: #b4c87e;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 16) {
+  background-color: #7ec89a;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 17) {
+  background-color: #817ec8;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 18) {
+  background-color: #c8957e;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 19) {
+  background-color: #817ec8;
+}
+.portfolio .portfolio-controls .portfolio-tags .category:nth-of-type(8n + 20) {
+  background-color: #7e87c8;
 }
 .portfolio .portfolio-controls .portfolio-tags .tag {
   display: inline-flex;
@@ -183,6 +243,36 @@
   font-size: 0.875rem;
   color: #e1e7f5;
   border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.portfolio .portfolio-controls .portfolio-tags .tag .close-icon {
+  margin-left: 8px;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+}
+.portfolio .portfolio-controls .portfolio-tags .category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  height: 2.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #e1e7f5;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.portfolio .portfolio-controls .portfolio-tags .category .close-icon {
+  margin-left: 8px;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
 }
 .portfolio .portfolio-controls .filter-button-mobile {
   display: none;
@@ -395,6 +485,7 @@
   padding-right: 2.5rem;
   max-height: 200px;
   overflow-y: auto;
+  /* Сброс стилей ссылок для тегов */
 }
 .tags-container .active-tags::-webkit-scrollbar,
 .tags-container .inactive-tags::-webkit-scrollbar {
@@ -404,6 +495,12 @@
 .tags-container .inactive-tags::-webkit-scrollbar-thumb {
   background-color: #adadad;
   border-radius: 0.25rem;
+}
+.tags-container .active-tags a.tag,
+.tags-container .inactive-tags a.tag {
+  text-decoration: none; /* Убираем подчёркивание */
+  color: inherit; /* Унаследовать цвет текста от родителя */
+  cursor: pointer; /* Добавляем указатель для кликабельности */
 }
 .tags-container .active-tags .tag,
 .tags-container .inactive-tags .tag {

@@ -128,9 +128,13 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.25rem 0.5rem; // Горизонтальний 4px (0.25rem), вертикальний 8px (0.5rem)
-
       @for $i from 1 through $repeat {
         .tag:nth-of-type(#{length($tag-colors)}n + #{$i}) {
+          background-color: nth($tag-colors, random(length($tag-colors)));
+        }
+      }
+      @for $i from 1 through $repeat {
+        .category:nth-of-type(#{length($tag-colors)}n + #{$i}) {
           background-color: nth($tag-colors, random(length($tag-colors)));
         }
       }
@@ -146,6 +150,38 @@
         font-size: 0.875rem; // 14px
         color: $white-ish; // Текст білий, щоб контрастувати з кольором тегу
         border-radius: 2px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        .close-icon {
+          margin-left: 8px;
+          font-size: 12px;
+          color: white;
+          cursor: pointer;
+        }
+      }
+      .category {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem; // Відступи від тексту до границь (16px зліва та справа)
+        height: 2.5rem; // 40px
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400; // Semibold
+        font-size: 0.875rem; // 14px
+        color: $white-ish; // Текст білий, щоб контрастувати з кольором тегу
+        border-radius: 2px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        .close-icon {
+          margin-left: 8px;
+          font-size: 12px;
+          color: white;
+          cursor: pointer;
+        }
       }
     }
     .filter-button-mobile {
@@ -291,7 +327,7 @@
 
     .categories-options {
       display: flex;
-      flex-wrap: wrap; // Перенос элементов на следующую строку
+      flex-wrap: wrap; // Перенос элементов на следующую строк;
       gap: 0.625rem 2rem; // 10px вертикально, 32px горизонтально
 
       .category-option {
@@ -402,6 +438,13 @@
     &::-webkit-scrollbar-thumb {
       background-color: $light-gray-ish;
       border-radius: 0.25rem; // 4px
+    }
+
+    /* Сброс стилей ссылок для тегов */
+    a.tag {
+      text-decoration: none; /* Убираем подчёркивание */
+      color: inherit; /* Унаследовать цвет текста от родителя */
+      cursor: pointer; /* Добавляем указатель для кликабельности */
     }
 
     .tag {
